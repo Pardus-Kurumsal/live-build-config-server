@@ -131,7 +131,7 @@ lb config noauto \
 	--mirror-binary "$public_pardus_mirror" \
 	--iso-application "Pardus" \
 	--iso-publisher "Pardus" \
-	--iso-volume "Pardus Live" \
+	--iso-volume "Pardus Server" \
 	--linux-packages linux-image \
 	--memtest memtest86 \
 	$lb_opts \
