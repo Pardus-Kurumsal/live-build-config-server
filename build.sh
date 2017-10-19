@@ -58,9 +58,9 @@ target_image_name() {
 		IMAGE_EXT="img"
 	fi
 	if [ "$PARDUS_VARIANT" = "default" ]; then
-		echo "${TARGET_SUBDIR:+$TARGET_SUBDIR/}Pardus-$PARDUS_VERSION-$PARDUS_ARCH-$TIMESTAMP$scm_v.$IMAGE_EXT"
+		echo "${TARGET_SUBDIR:+$TARGET_SUBDIR/}Pardus-$PARDUS_VERSION-$PARDUS_ARCH-$TIMESTAMP.$IMAGE_EXT"
 	else
-		echo "${TARGET_SUBDIR:+$TARGET_SUBDIR/}Pardus-$PARDUS_VARIANT-$PARDUS_VERSION-$PARDUS_ARCH-$TIMESTAMP$scm_v.$IMAGE_EXT"
+		echo "${TARGET_SUBDIR:+$TARGET_SUBDIR/}Pardus-$PARDUS_VERSION-${PARDUS_VARIANT^^}-$PARDUS_ARCH-$TIMESTAMP.$IMAGE_EXT"
 	fi
 }
 
@@ -143,7 +143,7 @@ if [ ! -d "$(dirname $0)/pardus-config/variant-$PARDUS_VARIANT" ]; then
 fi
 
 # Build parameters for lb config
-PARDUS_CONFIG_OPTS="--distribution $PARDUS_DIST -- --variant $PARDUS_VARIANT"
+PARDUS_CONFIG_OPTS="--distribution $PARDUS_DIST --variant $PARDUS_VARIANT"
 if [ -n "$OPT_pu" ]; then
 	PARDUS_CONFIG_OPTS="$PARDUS_CONFIG_OPTS --proposed-updates"
 	PARDUS_DIST="$PARDUS_DIST+pu"
