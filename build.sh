@@ -143,7 +143,7 @@ if [ ! -d "$(dirname $0)/pardus-config/variant-$PARDUS_VARIANT" ]; then
 fi
 
 # Build parameters for lb config
-PARDUS_CONFIG_OPTS="--distribution $PARDUS_DIST --variant $PARDUS_VARIANT"
+PARDUS_CONFIG_OPTS="--distribution $PARDUS_DIST"
 if [ -n "$OPT_pu" ]; then
 	PARDUS_CONFIG_OPTS="$PARDUS_CONFIG_OPTS --proposed-updates"
 	PARDUS_DIST="$PARDUS_DIST+pu"
